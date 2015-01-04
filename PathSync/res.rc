@@ -1,0 +1,248 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 464, 322
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_ACCEPTFILES
+MENU IDR_MENU2
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Synchronize paths",IDC_SYNCHROPATHS,7,1,450,65
+    LTEXT           "Local:",IDC_LOCAL_LABEL,14,12,20,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_PATH1,38,12,168,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE1,209,12,17,14
+    LTEXT           "Remote:",IDC_REMOTE_LABEL,233,12,28,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_PATH2,264,12,164,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE2,431,12,17,14
+    LTEXT           "Default synchronization action (requires re-analyze):",IDC_DEFACTIONLABEL,14,30,162,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_DEFBEHAVIOR,181,30,172,181,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Sync folders",IDC_SYNC_FOLDERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,358,32,55,10
+    LTEXT           "Filename mask:",IDC_INCLUDE_LABEL,14,48,50,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_INCLUDE_FILES,68,48,363,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "?",IDC_MASKHELP,436,48,13,12
+    GROUPBOX        "Ignore",IDC_STATIC,7,68,170,40
+    CONTROL         "File sizes",IDC_IGNORE_SIZE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,80,41,10
+    CONTROL         "Missing local files",IDC_IGNORE_MISSLOCAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,88,80,70,10
+    CONTROL         "File dates",IDC_IGNORE_DATE,"Button",BS_AUTO3STATE | WS_TABSTOP,14,92,44,10
+    CONTROL         "Missing remote files",IDC_IGNORE_MISSREMOTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,88,92,77,10
+    GROUPBOX        "Logging",IDC_LOGGING,184,68,273,40
+    CONTROL         "Enable logging",IDC_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,80,95,10
+    LTEXT           "Log filename:",IDC_LOGFILENAMELABEL,190,92,43,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_LOGPATH,236,92,175,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_LOGBROWSE,416,92,33,12
+    CONTROL         "Status: stopped",IDC_STATUS,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | SS_CENTERIMAGE | WS_GROUP,7,114,393,12,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "Analyze!",IDC_ANALYZE,406,112,51,17,0,WS_EX_STATICEDGE
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,134,450,158
+    CONTROL         "Stats...",IDC_STATS,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | SS_CENTERIMAGE | WS_GROUP,7,299,383,14
+    PUSHBUTTON      "&Synchronize!",IDC_GO,406,298,51,17,WS_DISABLED
+    PUSHBUTTON      "driver",IDC_DRIVER,420,30,29,14
+END
+
+IDD_DIALOG2 DIALOG 0, 0, 364, 188
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "PathSync - Synchronization"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Source:",IDC_STATIC,7,6,26,8
+    CONTROL         "",IDC_SRC,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,39,6,318,8
+    LTEXT           "Dest:",IDC_STATIC,7,16,18,8
+    CONTROL         "",IDC_DEST,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,39,16,318,8
+    CONTROL         "",IDC_FILEPOS,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,7,29,350,8
+    CONTROL         "Progress1",IDC_FILEPROGRESS,"msctls_progress32",WS_BORDER,7,39,350,10
+    CONTROL         "",IDC_TOTALPOS,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,7,56,350,16
+    CONTROL         "Progress1",IDC_TOTALPROGRESS,"msctls_progress32",WS_BORDER,7,73,350,10
+    LTEXT           "Error log:",IDC_STATIC,7,89,29,8
+    LISTBOX         IDC_LIST1,7,98,350,63,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Throttle to",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | BS_VCENTER | WS_TABSTOP,7,167,50,14
+    EDITTEXT        IDC_EDIT1,57,167,30,14,ES_AUTOHSCROLL
+    LTEXT           "kB/sec",IDC_THROTTLELBL,90,167,28,14,SS_CENTERIMAGE
+    CONTROL         "Close window when finished",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,119,167,105,14
+    PUSHBUTTON      "Cancel",IDCANCEL,316,167,41,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 457
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 315
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 357
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 181
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "ContextMenu"
+    BEGIN
+        MENUITEM "Local->Remote",               IDM_1TO2
+        MENUITEM "Remote->Local",               IDM_2TO1
+        MENUITEM "No Action",                   IDM_NOACTION
+        MENUITEM SEPARATOR
+        MENUITEM "Diff...",                     IDM_DIFF
+        MENUITEM "Open Local...",               IDM_OPENLOCAL
+        MENUITEM "Open Remote...",              IDM_OPENREMOTE
+    END
+END
+
+IDR_MENU2 MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Load SyncSettings...",       IDM_LOAD_SYNC_SETTINGS
+        MENUITEM "&Save SyncSettings...",       IDM_SAVE_SYNC_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Choose Diff Tool...",        IDC_SETCOMPARE
+        MENUITEM SEPARATOR
+        MENUITEM "&Quit",                       IDM_EXIT
+    END
+    POPUP "&Help", HELP
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "icon1.ico"
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENC)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIFFTOOL DIALOG 200, 200, 315, 94
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose a diff tool to use"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Diff application:",IDC_STATIC,7,7,301,8
+    EDITTEXT        IDC_DIFF,7,20,261,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE,275,20,33,12
+    LTEXT           "Diff parameters (use %1 and %2 for local and remote files):",IDC_STATIC,7,39,301,8
+    EDITTEXT        IDC_DIFFPARAMS,7,52,261,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,99,73,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,155,73,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIFFTOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 308
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
