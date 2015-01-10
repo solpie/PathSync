@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 2.8.4)
+project(PathSync)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows -std=gnu++0x -w -s -DWINVER=0x502 -D_WIN32_IE=0x600 -D_WIN32_WINNT=0x502")
+set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIBRARIES} C:/MinGW/lib/libcomctl32.a")
+set(SRC PathSync)
+set(WDL WDL)
+set(SOURCE_FILES ${SOURCE_FILES} ${SRC}/pathsync.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} ${SRC}/res.rc)
+set(SOURCE_FILES ${SOURCE_FILES} ${SRC}/fnmatch.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} ${WDL}/win32_utf8.c)
+set(SOURCE_FILES ${SOURCE_FILES} ${WDL}/WinGUI/wndsize.cpp)
+add_executable(PathSync ${SOURCE_FILES})
+
+

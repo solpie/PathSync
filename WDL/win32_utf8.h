@@ -111,9 +111,6 @@ WDL_WIN32_UTF8_IMPL void WDL_UTF8_ListViewConvertDispInfoToW(void *di); //NMLVDI
 #endif
 #define GetCurrentDirectory GetCurrentDirectoryUTF8
 
-#define PathFileExists PathFileExists
-
-
 #ifdef SetCurrentDirectory
 #undef SetCurrentDirectory
 #endif

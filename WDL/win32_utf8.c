@@ -1,6 +1,14 @@
+#ifdef UNICODE
+#define LVITEM    LVITEMW
+#define LPLVITEM  LPLVITEMW
+#define LVITEM_V1_SIZE LVITEMW_V1_SIZE
+#else
+#define LVITEM    LVITEMA
+#define LPLVITEM  LPLVITEMA
+#define LVITEM_V1_SIZE LVITEMA_V1_SIZE
+#endif
 #include "win32_utf8.h"
 #include "wdltypes.h"
-
 #ifdef _WIN32
 
 #if !defined(WDL_NO_SUPPORT_UTF8)

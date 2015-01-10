@@ -102,7 +102,7 @@ fnmatch (pattern, string, flags)
 	case '[':
 	  {
 	    /* Nonzero if the sense of the character class is inverted.  */
-	    register int not;
+	    register int not_;
 
 	    if (*n == '\0')
 	      return FNM_NOMATCH;
@@ -111,8 +111,8 @@ fnmatch (pattern, string, flags)
 		(n == string || ((flags & FNM_PATHNAME) && n[-1] == '\\')))
 	      return FNM_NOMATCH;
 
-	    not = (*p == '!' || *p == '^');
-	    if (not)
+		  not_ = (*p == '!' || *p == '^');
+	    if (not_)
 	      ++p;
 
 	    c = *p++;
@@ -144,7 +144,7 @@ fnmatch (pattern, string, flags)
 		if (c == ']')
 		  break;
 	      }
-	    if (!not)
+	    if (!not_)
 	      return FNM_NOMATCH;
 	    break;
 
@@ -158,7 +158,7 @@ fnmatch (pattern, string, flags)
 
 		c = *p++;
 	      }
-	    if (not)
+	    if (not_)
 	      return FNM_NOMATCH;
 	  }
 	  break;
