@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(PathSync)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows -std=gnu++0x -w -s -DWINVER=0x502 -D_WIN32_IE=0x600 -D_WIN32_WINNT=0x502")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows -DWINVER=0x502 -D_WIN32_IE=0x600 -D_WIN32_WINNT=0x502")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w -std=gnu++0x")
+#reduce size
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s -fpermissive -flto -fwhole-program")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections")
 set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIBRARIES} C:/MinGW/lib/libcomctl32.a")
 set(SRC PathSync)
 set(WDL WDL)
